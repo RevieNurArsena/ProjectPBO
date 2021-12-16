@@ -1,2 +1,15 @@
 Q1 : jelaskan atau deskripsikan tentang project nanti yang akan dibuat. berapa banyak tabel dan aktor(pengguna) yang ada di project kalian masing-masing?
-Answers : ?
+Answers : 
+
+Penjelasan Project :
+Project yang akan dibuat oleh kelompok kami adalah arsip buku, dimana admin yang menginputkan buku kedalam arsip nya
+
+Aktor :
+- Admin
+
+Tabel : 5
+- Tabel Admin
+- Tabel Pengarang
+- Tabel Penerbit
+- Tabel Buku
+- Tabel Arsip
