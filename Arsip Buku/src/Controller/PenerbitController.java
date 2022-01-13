@@ -1,6 +1,7 @@
-package Controller07175;
+package Controller;
 
 import Model.PenerbitModel;
+import javax.swing.table.DefaultTableModel;
 
 public class PenerbitController {
     private PenerbitModel penerbit = new PenerbitModel();
@@ -19,5 +20,9 @@ public class PenerbitController {
     
     public void viewPenerbit(){
         penerbit.viewPenerbit();
+    }
+    
+    public DefaultTableModel DaftarPGUI(){
+        return penerbit.DaftarPGUI();
     }
 }

@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 
 public class tahunTerbitModel {
     private Connection conn = koneksi07175.getconection07175();
@@ -63,6 +64,29 @@ public class tahunTerbitModel {
          }
     }
 
+    public DefaultTableModel DaftarTahunGUI(){
+       DefaultTableModel datatahun = new DefaultTableModel();
+        int i = 1;
+        try{
+        Object [] kolom = {"NO", "ID_TAHUN", "TAHUN TERBIT"};
+        datatahun.setColumnIdentifiers(kolom);
+        
+        String sql = "SELECT * FROM tahunterbit";
+            PreparedStatement stat = conn.prepareStatement(sql);
+            ResultSet rs = stat.executeQuery();
+            while (rs.next()){
+                Object[] data = new Object[3];
+                data[0] = i++;
+                data[1] = rs.getInt("id_tahunterbit");
+                data[2] = rs.getString("tahunterbit");
+                datatahun.addRow(data);
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return datatahun;
+   }
+    
      public static void main(String[] args) {
          tahunTerbitModel p = new tahunTerbitModel();
          p.viewTahunTerbit();

@@ -1,6 +1,7 @@
-package Controller07175;
+package Controller;
 
 import Model.tahunTerbitModel;
+import javax.swing.table.DefaultTableModel;
 
 public class tahunTerbitController {
     private tahunTerbitModel tahun = new tahunTerbitModel();
@@ -19,5 +20,9 @@ public class tahunTerbitController {
     
     public void viewTahunTerbit(){
         tahun.viewTahunTerbit();
+    }
+    
+    public DefaultTableModel DaftartahunGUI(){
+        return tahun.DaftarTahunGUI();
     }
 }

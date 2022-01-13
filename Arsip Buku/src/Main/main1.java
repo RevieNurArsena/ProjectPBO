@@ -11,8 +11,8 @@ public class main1 {
         penulisModel penulis = new penulisModel();
         tahunTerbitModel tahun = new tahunTerbitModel();
         bukuModel buku = new bukuModel();
-        
-        int pilih, pil, pilihMenu, pilihmenuPenulis, pilihMenuPenerbit, pilihMenuTahunTerbit;
+        arsipBuku arsip = new arsipBuku();
+        int pilih, pil, pilihMenu, pilihmenuPenulis, pilihMenuPenerbit, pilihMenuTahunTerbit, pilihArsip;
         
         do{
         System.out.println("SELAMAT DATANG");
@@ -89,7 +89,7 @@ public class main1 {
                                     break;
                                     
                                     default:
-                                        System.out.println("]nKELUAR\n");
+                                        System.out.println("\nKELUAR\n");
                                         break;
                                 }
                             }while(pil != 0);
@@ -110,30 +110,30 @@ public class main1 {
                                 switch(pilihMenuPenerbit){
                                     case 1:
                                         System.out.print("Masukan Nama Penerbit : ");
-                                        String judul = input.next();
+                                        String p = input.next();
 
-                                        
+                                        penerbit.tambahPenerbit(p);
                                     break;
 
                                     case 2:
                                         System.out.print("Masukan Id Penerbit   : ");
-                                        int id_buku = input.nextInt();
+                                        int id_penerbit = input.nextInt();
 
-                                        //buku.deleteBuku(id_buku);
+                                        penerbit.deletePenerbit(id_penerbit);
                                     break;
 
                                     case 3:
                                         System.out.print("Masukan Id Penerbit   : ");
-                                        int id_bukuUp = input.nextInt();
+                                        int id_pUpt = input.nextInt();
                                         System.out.print("Masukan Nama Penerbit : ");
-                                        String judulUp = input.next();
+                                        String pUpt = input.next();
 
-                                        //buku.updateBuku(judulUp, id_bukuUp);
+                                        penerbit.updatePenerbit(pUpt, id_pUpt);
                                     break;
 
                                     case 4:
                                         System.out.println("Data Penerbit : ");
-                                        //buku.viewBuku();
+                                        penerbit.viewPenerbit();
                                     break;
                                     
                                     default:
@@ -159,30 +159,30 @@ public class main1 {
                                 switch(pilihmenuPenulis){
                                     case 1:
                                         System.out.print("Masukan Nama Penulis : ");
-                                        String judul = input.next();
+                                        String pe = input.next();
 
-                                        //buku.tambahBuku(judul);
+                                        penulis.tambahPenulis(pe);
                                     break;
 
                                     case 2:
                                         System.out.print("Masukan Id Penulis   : ");
-                                        int id_buku = input.nextInt();
+                                        int id_pe = input.nextInt();
 
-                                        //buku.deleteBuku(id_buku);
+                                        penulis.deletePenulis(id_pe);
                                     break;
 
                                     case 3:
                                         System.out.print("Masukan Id Penulis   : ");
-                                        int id_bukuUp = input.nextInt();
+                                        int id_peUp = input.nextInt();
                                         System.out.print("Masukan Nama Penulis : ");
-                                        String judulUp = input.next();
+                                        String peUp = input.next();
 
-                                        //buku.updateBuku(judulUp, id_bukuUp);
+                                        penulis.updatePenulis(peUp, id_peUp);
                                     break;
 
                                     case 4:
                                         System.out.println("Data Penulis : ");
-                                        //buku.viewBuku();
+                                        penulis.viewPenulis();
                                     break;
                                     
                                     default:
@@ -208,30 +208,30 @@ public class main1 {
                                 switch(pilihMenuTahunTerbit){
                                     case 1:
                                         System.out.print("Masukan Nama Tahun Terbit : ");
-                                        String judul = input.next();
+                                        String t = input.next();
 
-                                        //buku.tambahBuku(judul);
+                                        tahun.tambahTahunTerbit(t);
                                     break;
 
                                     case 2:
                                         System.out.print("Masukan Id Tahun Terbit   : ");
-                                        int id_buku = input.nextInt();
+                                        int id_t = input.nextInt();
 
-                                        //buku.deleteBuku(id_buku);
+                                        tahun.deleteTahunTerbit(id_t);
                                     break;
 
                                     case 3:
                                         System.out.print("Masukan Id Tahun Terbit   : ");
-                                        int id_bukuUp = input.nextInt();
+                                        int id_tUp = input.nextInt();
                                         System.out.print("Masukan Nama Tahun Terbit : ");
-                                        String judulUp = input.next();
+                                        String tUp = input.next();
 
-                                        //buku.updateBuku(judulUp, id_bukuUp);
+                                        tahun.updateTahunTerbit(tUp, id_tUp);
                                     break;
 
                                     case 4:
                                         System.out.println("Data Tahun Terbit : ");
-                                        //buku.viewBuku();
+                                        tahun.viewTahunTerbit();
                                     break;
                                     
                                     default:
@@ -240,6 +240,71 @@ public class main1 {
                                 }
                                 
                             }while(pilihMenuTahunTerbit != 0);
+                                
+                            case 5: 
+                                do{
+                                System.out.println("MENU TAHUN TERBIT: ");
+                                System.out.println("1. Tambah Arsip Buku");
+                                System.out.println("2. Update Arsip Buku");
+                                System.out.println("3. View Arsip Buku");
+                                System.out.println("0. KELUAR");
+                                
+                                System.out.print("Silhakan Masukan Pilihan : ");
+                                pilihArsip = input.nextInt();
+                                
+                                switch(pilihArsip){
+                                    case 1:
+                                        System.out.println("Data Buku : ");
+                                        buku.viewBuku();
+                                        System.out.println("\nData Penulis : ");
+                                        penulis.viewPenulis();
+                                        System.out.println("\nData Penerbit : ");
+                                        penerbit.viewPenerbit();
+                                        System.out.println("\nData Tahun Terbit : ");
+                                        tahun.viewTahunTerbit();
+                                        
+                                        System.out.print("\nMasukan Id Buku :");
+                                        int idb= input.nextInt();
+                                        System.out.print("Masukan Id Penulis :");
+                                        int idp= input.nextInt();
+                                        System.out.print("Masukan Id Penerbit :");
+                                        int idpe= input.nextInt();
+                                        System.out.print("Masukan Id Tahun Terbit :");
+                                        int idt= input.nextInt();
+                                        
+                                        arsip.tambahArsip(idb, idpe, idpe, idt);
+                                        
+                                    break;
+
+                                    case 2:
+                                        System.out.println("\nData Arsip : ");
+                                        arsip.viewArsip();
+                                        System.out.print("\nMasukan Id Arsip       : ");
+                                        int ida = input.nextInt();
+                                        System.out.print("Masukan Id Buku         :");
+                                        int idbUp= input.nextInt();
+                                        System.out.print("Masukan Id Penulis      :");
+                                        int idpUp= input.nextInt();
+                                        System.out.print("Masukan Id Penerbit     :");
+                                        int idpeUp= input.nextInt();
+                                        System.out.print("Masukan Id Tahun Terbit :");
+                                        int idtUp= input.nextInt();
+
+                                        arsip.updateArsip(idbUp, idpUp, idpeUp, idtUp, ida);
+                                    break;
+
+                                    case 3:
+                                        System.out.println("\nData Arsip :");
+                                        arsip.viewArsip();
+                                    break;
+                                    
+                                    default:
+                                        System.out.println("\nKELUAR\n");
+                                        break;
+                                }
+                                
+                                }while(pilihArsip != 0);
+                                break;
                     }
                     
                     

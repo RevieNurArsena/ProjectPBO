@@ -1,6 +1,7 @@
-package Controller07175;
+package Controller;
 
 import Model.bukuModel;
+import javax.swing.table.DefaultTableModel;
 
 public class BukuController {
     private bukuModel buku = new bukuModel();
@@ -19,5 +20,9 @@ public class BukuController {
     
     public void viewBuku(){
         buku.viewBuku();
+    }
+    
+    public DefaultTableModel DaftarBukuGUI(){
+        return buku.DaftarBukuGUI();
     }
 }

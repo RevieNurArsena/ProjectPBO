@@ -1,4 +1,4 @@
-package Controller07175;
+package Controller;
 
 import Model.AdminModel;
 
@@ -13,7 +13,7 @@ public class AdminController {
         admin.daftarAdmin(username, nama, pass, alamat, notelp);
     }
     
-    public void viewAdmin(){
-        admin.viewAdmin();
-    }
+//    public void viewAdmin(){
+//        admin.viewAdmin();
+//    }
 }

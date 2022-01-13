@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 
 public class PenerbitModel {
     private Connection conn = koneksi07175.getconection07175();
@@ -62,6 +63,29 @@ public class PenerbitModel {
 
          }
     }
+    
+    public DefaultTableModel DaftarPGUI(){
+       DefaultTableModel datapenerbit = new DefaultTableModel();
+        int i = 1;
+        try{
+        Object [] kolom = {"NO", "ID PENERBIT", "PENERBIT"};
+        datapenerbit.setColumnIdentifiers(kolom);
+        
+        String sql = "SELECT * FROM penerbit";
+            PreparedStatement stat = conn.prepareStatement(sql);
+            ResultSet rs = stat.executeQuery();
+            while (rs.next()){
+                Object[] data = new Object[3];
+                data[0] = i++;
+                data[1] = rs.getInt("id_penerbit");
+                data[2] = rs.getString("nama_penerbit");
+                datapenerbit.addRow(data);
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return datapenerbit;
+   }
 
      public static void main(String[] args) {
          PenerbitModel p = new PenerbitModel();

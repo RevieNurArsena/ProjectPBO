@@ -35,21 +35,21 @@ public class AdminModel {
             e.printStackTrace();
         }
     }
-    
-    public void viewAdmin()
-    {
-        try{
-            String sql = "SELECT * FROM admin";
-            PreparedStatement stat = conn.prepareStatement(sql);
-            ResultSet rs = stat.executeQuery();
-            while (rs.next()){
-                System.out.println("USERNAME    : "+rs.getString("username"));
-                System.out.println("NAMA   : "+rs.getString("nama"));
-                System.out.println("ALAMAT : "+rs.getString("alamat"));
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-
-        }
-    }
+//    
+//    public void viewAdmin()
+//    {
+//        try{
+//            String sql = "SELECT * FROM admin";
+//            PreparedStatement stat = conn.prepareStatement(sql);
+//            ResultSet rs = stat.executeQuery();
+//            while (rs.next()){
+//                System.out.println("USERNAME    : "+rs.getString("username"));
+//                System.out.println("NAMA   : "+rs.getString("nama"));
+//                System.out.println("ALAMAT : "+rs.getString("alamat"));
+//            }
+//        }catch (SQLException e){
+//            e.printStackTrace();
+//
+//        }
+//    }
 }

@@ -1,6 +1,7 @@
-package Controller07175;
+package Controller;
 
 import Model.penulisModel;
+import javax.swing.table.DefaultTableModel;
 
 public class PenulisController {
     private penulisModel penulis = new penulisModel();
@@ -19,5 +20,9 @@ public class PenulisController {
     
     public void viewPenulis(){
         penulis.viewPenulis();
+    }
+    
+    public DefaultTableModel DaftarPenulisGUI(){
+        return penulis.DaftarPenulisGUI();
     }
 }
